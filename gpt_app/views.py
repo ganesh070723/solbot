@@ -3,7 +3,7 @@ import openai
 import speech_recognition as sr
 import json
 import pyttsx3
-openai.api_key = "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"
+openai.api_key = "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"
 # Create your views here.
 def index(request):
     arr=[]
