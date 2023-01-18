@@ -1,9 +1,7 @@
 from django.shortcuts import render
 import openai
 import speech_recognition as sr
-import json
-import pyttsx3
-openai.api_key = "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"
+openai.api_key = "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"
 # Create your views here.
 def index(request):
     arr=[]
@@ -22,33 +20,14 @@ def index(request):
             return response.choices[0].text
           
         user_input = name
-        # user_input = 0
-        # r = sr.Recognizer()
-        #
-        # with sr.Microphone() as source:
-        #     print("Please say something: ")
-        #     audio = r.listen(source)
-        # try:
-        #     text = r.recognize_google(audio)
-        #     user_input = text
-        #     # print("You said: ", text)
-        # except:
-        #     pass
+
         prompt = f"User: {user_input} Bot: "
         bot_response = generate_response(prompt)
 
-        # engine = pyttsx3.init()
-        #
-        # # Set the voice and rate
-        # engine.setProperty('voice', 'en-us')
-        # engine.setProperty('rate', 150)
-        #
-        # # Speak the text
+
        
         arr.append(bot_response)
         print("GPT: " + bot_response)
-        # engine.say(bot_response)
-        # engine.runAndWait()
         context ={
             'results': arr,
             'question': name,
