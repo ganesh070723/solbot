@@ -1,7 +1,7 @@
 from django.shortcuts import render
 import openai
 import speech_recognition as sr
-openai.api_key = "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"
+openai.api_key = "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"
 # Create your views here.
 def index(request):
     arr=[]
